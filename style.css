@@ -51,7 +51,42 @@ body {
 .notification-item {
   display: flex;
   align-items: start;
-  padding: 4px 0;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.notification-avatar {
+  min-width: 40px;
+  max-width: 40px;
+}
+
+.notification-avatar img {
+  width: 100%;
+}
+
+.notification-content {
+  font-size: 0.9rem;
+  color: var(--gray-blue);
+}
+
+.notification-content a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.bold {
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+
+.notification-item--sub-message {
+  font-size: 0.8rem;
+  color: var(--dark-gray-blue);
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid var(--gray-blue-1);
+  border-radius: 8px;
 }
 
 .attribution {

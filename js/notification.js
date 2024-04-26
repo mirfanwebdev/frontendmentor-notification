@@ -1,5 +1,6 @@
 function showMessage(container, message) {
   const messageDiv = document.createElement("div");
+  messageDiv.classList.add("notification-item--sub-message");
   messageDiv.textContent = message;
   return container.appendChild(messageDiv);
 }
@@ -13,9 +14,14 @@ function getNotification(data) {
 
     div.classList.add("notification-item");
     contentDiv.classList.add("notification-content");
-    imageContainer.innerHTML = `<img src="${item.img}" alt="${item.alt}" class="notification-item--avatar">`;
-    contentDiv.innerHTML = `${item.name} ${item.message} ${
-      item.link ? `<a href="#">${item.link}</a>` : ""
+    imageContainer.classList.add("notification-avatar");
+    imageContainer.innerHTML = `<img src="${item.img}" alt="${item.alt}">`;
+    contentDiv.innerHTML = `<span class="bold">${item.name}</span> ${
+      item.message
+    } ${item.link ? `<a href="#">${item.link}</a>` : ""}${
+      item.highlight
+        ? `<span class="notification-item--highlight">${item.highlight}</span>`
+        : ""
     } <p class="notification-item--time">${item.time} ago</p>`;
 
     notification.appendChild(div);
