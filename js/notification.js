@@ -5,6 +5,17 @@ function showMessage(container, message) {
   return container.appendChild(messageDiv);
 }
 
+function unreadMessage(container) {
+  return container.classList.add("unread");
+}
+
+function showImage(container, img) {
+  const messageImage = document.createElement("div");
+  messageImage.classList.add("notification-item--image");
+  messageImage.innerHTML = `<img src=${img} alt="image">`;
+  return container.appendChild(messageImage);
+}
+
 function getNotification(data) {
   const notification = document.querySelector(".notification");
   data.map((item) => {
@@ -22,11 +33,21 @@ function getNotification(data) {
       item.highlight
         ? `<span class="notification-item--highlight">${item.highlight}</span>`
         : ""
+    } ${
+      item.status == "unread" ? `<span class="unread-badge">&nbsp;</span>` : ""
     } <p class="notification-item--time">${item.time} ago</p>`;
 
     notification.appendChild(div);
     div.appendChild(imageContainer);
     div.appendChild(contentDiv);
+
+    if (item.status == "unread") {
+      unreadMessage(div);
+    }
+
+    if (item.messageImg) {
+      showImage(div, item.messageImg);
+    }
 
     if (item.subMassage) {
       showMessage(contentDiv, item.subMassage);

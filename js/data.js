@@ -8,6 +8,7 @@ const data = [
     time: "1m",
     img: "./assets/images/avatar-mark-webber.webp",
     alt: "avatar-mark-webber",
+    status: "unread",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const data = [
     time: "5m",
     img: "./assets/images/avatar-angela-gray.webp",
     alt: "avatar-angela-gray",
+    status: "unread",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const data = [
     time: "1 day",
     img: "./assets/images/avatar-jacob-thompson.webp",
     alt: "avatar-jacob-thompson",
+    status: "unread",
   },
   {
     id: 4,
@@ -40,7 +43,7 @@ const data = [
     id: 5,
     name: "Kimberly Smith",
     message: "commented on your picture",
-    messageImg: "./assets/images/image-chess.jpg",
+    messageImg: "./assets/images/image-chess.webp",
     time: "1 week",
     img: "./assets/images/avatar-kimberly-smith.webp",
     alt: "avatar-kimberly-smith",

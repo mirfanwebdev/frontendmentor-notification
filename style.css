@@ -22,11 +22,13 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--white);
 }
-
+.container {
+  padding: 1rem;
+}
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 .header h1 {
   font-size: 1.5rem;
@@ -43,6 +45,7 @@ body {
 }
 .header button {
   font-size: 1rem;
+  font-weight: 500;
   border: none;
   background-color: transparent;
   color: var(--dark-gray-blue);
@@ -51,8 +54,9 @@ body {
 .notification-item {
   display: flex;
   align-items: start;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 1rem;
+  margin: 0.55rem 0;
 }
 
 .notification-avatar {
@@ -66,7 +70,8 @@ body {
 
 .notification-content {
   font-size: 0.9rem;
-  color: var(--gray-blue);
+  font-weight: 500;
+  color: var(--dark-gray-blue);
 }
 
 .notification-content a {
@@ -75,18 +80,58 @@ body {
   font-weight: 800;
 }
 
+.notification-content p {
+  margin-top: 0.2rem;
+}
+
 .bold {
   font-weight: 800;
   color: var(--dark-blue);
 }
 
+.notification-item--highlight {
+  color: var(--dark-gray-blue);
+  font-weight: 800;
+}
+
+.notification-item--image {
+  min-width: 40px;
+  max-width: 40px;
+}
+
+.notification-item--image img {
+  width: 100%;
+}
+
+.notification-item--time {
+  color: var(--gray-blue);
+}
+
 .notification-item--sub-message {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--dark-gray-blue);
   padding: 1rem;
   margin: 1rem 0;
   border: 1px solid var(--gray-blue-1);
   border-radius: 8px;
+}
+
+.unread {
+  background-color: var(--gray-blue-0);
+  border: transparent;
+  border-radius: 8px;
+}
+
+.unread-badge {
+  position: relative;
+  font-size: 8px;
+  vertical-align: middle;
+  padding: 0px 4px;
+  margin: 0 4px;
+  background-color: var(--red);
+  color: white;
+  border: transparent;
+  border-radius: 100%;
 }
 
 .attribution {
