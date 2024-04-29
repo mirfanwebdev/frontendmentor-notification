@@ -36,15 +36,15 @@ body {
   color: var(--dark-blue);
 }
 .badge {
-  font-size: 1rem;
+  font-size: 0.9rem;
   background-color: var(--blue);
   color: var(--white);
-  padding: 2px 6px;
+  padding: 1.5px 10px;
   border-color: transparent;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .header button {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: none;
   background-color: transparent;
@@ -89,9 +89,17 @@ body {
   color: var(--dark-blue);
 }
 
+span.bold:hover {
+  color: var(--blue);
+}
+
 .notification-item--highlight {
   color: var(--dark-gray-blue);
   font-weight: 800;
+}
+
+.notification-item--highlight:hover {
+  color: var(--blue);
 }
 
 .notification-item--image {
@@ -116,10 +124,15 @@ body {
   border-radius: 8px;
 }
 
+.notification-item--sub-message:hover {
+  background-color: var(--gray-blue-1);
+}
+
 .unread {
   background-color: var(--gray-blue-0);
   border: transparent;
   border-radius: 8px;
+  box-shadow: 2px 2px 5px var(--gray-blue-1);
 }
 
 .unread-badge {

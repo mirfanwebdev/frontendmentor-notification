@@ -1,3 +1,11 @@
+let counter = 3;
+
+function getCounter(counter) {
+  const notificationCount = document.querySelector(".notification-count");
+  notificationCount.textContent = counter;
+  return notificationCount;
+}
+
 function showMessage(container, message) {
   const messageDiv = document.createElement("div");
   messageDiv.classList.add("notification-item--sub-message");
@@ -14,6 +22,29 @@ function showImage(container, img) {
   messageImage.classList.add("notification-item--image");
   messageImage.innerHTML = `<img src=${img} alt="image">`;
   return container.appendChild(messageImage);
+}
+
+function readAllNotification() {
+  const unreadNotification = document.querySelectorAll(
+    ".notification-item.unread"
+  );
+  const unreadBadge = document.querySelectorAll(".unread-badge");
+
+  unreadNotification.forEach((item) => {
+    item.classList.remove("unread");
+  });
+
+  unreadBadge.forEach((item) => {
+    item.remove();
+  });
+
+  getCounter(0);
+}
+
+function unreadNotification(item) {
+  item.classList.remove("unread");
+  getCounter(counter - 1);
+  return (counter -= 1);
 }
 
 function getNotification(data) {
@@ -40,6 +71,11 @@ function getNotification(data) {
     notification.appendChild(div);
     div.appendChild(imageContainer);
     div.appendChild(contentDiv);
+    div.addEventListener("click", () => {
+      if (item.status == "unread") {
+        unreadNotification(div);
+      }
+    });
 
     if (item.status == "unread") {
       unreadMessage(div);
@@ -55,4 +91,9 @@ function getNotification(data) {
   });
 }
 
-getNotification(data);
+function initialize() {
+  getCounter(counter);
+  getNotification(data);
+}
+
+initialize();
