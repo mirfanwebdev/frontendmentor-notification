@@ -49,6 +49,7 @@ function unreadNotification(item) {
 
 function getNotification(data) {
   const notification = document.querySelector(".notification");
+
   data.map((item) => {
     const div = document.createElement("div");
     const contentDiv = document.createElement("div");
@@ -58,6 +59,7 @@ function getNotification(data) {
     contentDiv.classList.add("notification-content");
     imageContainer.classList.add("notification-avatar");
     imageContainer.innerHTML = `<img src="${item.img}" alt="${item.alt}">`;
+
     contentDiv.innerHTML = `<span class="bold">${item.name}</span> ${
       item.message
     } ${item.link ? `<a href="#">${item.link}</a>` : ""}${
@@ -71,6 +73,7 @@ function getNotification(data) {
     notification.appendChild(div);
     div.appendChild(imageContainer);
     div.appendChild(contentDiv);
+
     div.addEventListener("click", () => {
       if (item.status == "unread") {
         unreadNotification(div);
