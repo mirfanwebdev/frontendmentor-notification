@@ -42,7 +42,11 @@ function readAllNotification() {
 }
 
 function unreadNotification(item) {
+  // remove unread style
   item.classList.remove("unread");
+  // remove unread badge
+  item.querySelector(".unread-badge").remove();
+  // update counter
   getCounter(counter - 1);
   return (counter -= 1);
 }
